@@ -1,0 +1,16 @@
+{
+	"name": "我的第一个扩展程序",
+	"version": "1.0",
+    "manifest_version": 2,
+    "description": "第一个由我开发的扩展",
+    "browser_action": {
+		"default_icon": "./images/icon25.jpg"
+	},
+	"permissions": [
+		"tabs"
+	],
+	"browser_action": {
+    	"default_icon": "./images/icon25.jpg",
+    	"default_popup": "popup.html"
+	}
+}
