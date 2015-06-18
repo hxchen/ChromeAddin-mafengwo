@@ -1,16 +1,21 @@
 {
-	"name": "我的第一个扩展程序",
+	"name": "picZongzi",
 	"version": "1.0",
     "manifest_version": 2,
-    "description": "第一个由我开发的扩展",
+    "description": "自动抓取蚂蜂窝粽子",
     "browser_action": {
-		"default_icon": "./images/icon25.jpg"
+		"default_icon": "./images/icon.png",
+		"default_title": "蚂蜂窝自动捡粽子"
 	},
 	"permissions": [
-		"tabs"
+		"tabs",
+    	"https://*/*",
+    	"http://*/*"
 	],
-	"browser_action": {
-    	"default_icon": "./images/icon25.jpg",
-    	"default_popup": "popup.html"
-	}
+  	"content_scripts": [
+        {
+            "matches": ["*://*.mafengwo.cn/*"],
+            "js": ["jquery-1.11.3.min.js", "mafengwo.js"]
+        }
+    ]
 }
